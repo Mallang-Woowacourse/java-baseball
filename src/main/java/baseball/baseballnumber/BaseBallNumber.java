@@ -1,4 +1,4 @@
-package baseball.baseball;
+package baseball.baseballnumber;
 
 import java.util.LinkedHashSet;
 import java.util.List;
