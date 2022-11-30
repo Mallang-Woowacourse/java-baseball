@@ -16,7 +16,7 @@ public class Comparing extends BaseBallGameStep {
     }
 
     private Step judgeNext(CompareResult result) {
-        if (result.isStrike()) {
+        if (result.isAnswer()) {
             return CorrectAnswer(controller);
         }
         return InputNumber(controller);
