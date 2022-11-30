@@ -28,6 +28,18 @@ public class CompareResult {
         return new CompareResult(this.strike + result.strike, this.ball + result.ball);
     }
 
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
+    public boolean isNothing() {
+        return strike + ball == 0;
+    }
+
     public boolean isAnswer() {
         return ANSWER_STRIKE_COUNT == this.strike;
     }
