@@ -54,7 +54,7 @@ public class BaseBallNumber {
         return result;
     }
 
-    private CompareResult compare(int index, Integer number) {
+    private CompareResult compare(final int index, final Integer number) {
         if (isStrike(index, number)) {
             return CompareResult.strike();
         }
@@ -64,11 +64,11 @@ public class BaseBallNumber {
         return CompareResult.nothing();
     }
 
-    private boolean isStrike(int index, Integer number) {
+    private boolean isStrike(final int index, final Integer number) {
         return this.numbers.get(index).equals(number);
     }
 
-    private boolean isBall(Integer number) {
+    private boolean isBall(final Integer number) {
         return this.numbers.contains(number);
     }
 }
