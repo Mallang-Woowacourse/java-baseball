@@ -37,6 +37,14 @@ public abstract class BaseBallNumber {
         }
     }
 
+    public CompareResult compare(final BaseBallNumber baseBallNumber) {
+        CompareResult result = CompareResult.nothing();
+        for (int i = 0; i < baseBallNumber.numbers.size(); i++) {
+            result = result.add(compare(i, baseBallNumber.numbers.get(i)));
+        }
+        return result;
+    }
+
     public CompareResult compare(final int index, final Integer number) {
         if (isStrike(index, number)) {
             return CompareResult.strike();
