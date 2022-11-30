@@ -2,6 +2,8 @@ package baseball.domain.compare;
 
 public class CompareResult {
 
+    private static final int ANSWER_STRIKE_COUNT = 3;
+
     private final int strike;
     private final int ball;
 
@@ -24,5 +26,9 @@ public class CompareResult {
 
     public CompareResult add(CompareResult result) {
         return new CompareResult(this.strike + result.strike, this.ball + result.ball);
+    }
+
+    public boolean isAnswer() {
+        return ANSWER_STRIKE_COUNT == this.strike;
     }
 }
