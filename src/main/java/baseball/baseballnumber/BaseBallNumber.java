@@ -1,5 +1,7 @@
 package baseball.baseballnumber;
 
+import baseball.compare.CompareResult;
+
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -42,5 +44,31 @@ public class BaseBallNumber {
                 throw new IllegalArgumentException();
             }
         }
+    }
+
+    public CompareResult compare(final BaseBallNumber baseBallNumber) {
+        CompareResult result = CompareResult.nothing();
+        for (int i = 0; i < baseBallNumber.numbers.size(); i++) {
+            result = result.add(compare(i, baseBallNumber.numbers.get(i)));
+        }
+        return result;
+    }
+
+    private CompareResult compare(int index, Integer number) {
+        if (isStrike(index, number)) {
+            return CompareResult.strike();
+        }
+        if (isBall(number)) {
+            return CompareResult.ball();
+        }
+        return CompareResult.nothing();
+    }
+
+    private boolean isStrike(int index, Integer number) {
+        return this.numbers.get(index).equals(number);
+    }
+
+    private boolean isBall(Integer number) {
+        return this.numbers.contains(number);
     }
 }
