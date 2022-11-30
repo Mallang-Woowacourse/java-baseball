@@ -19,7 +19,7 @@ public class InputRestart extends BaseBallGameStep {
         if (gameCommand == GameCommand.RESTART) {
             return new InitGame(controller);
         }
-        return Exit(controller);
+        return new Exit(controller);
     }
 
     @Override
