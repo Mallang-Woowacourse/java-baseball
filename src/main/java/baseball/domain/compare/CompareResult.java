@@ -1,4 +1,4 @@
-package baseball.compare;
+package baseball.domain.compare;
 
 public class CompareResult {
 
